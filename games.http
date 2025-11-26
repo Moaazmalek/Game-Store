@@ -1,0 +1,34 @@
+@host = http://localhost:5227
+@id=1
+
+### Get all games
+GET {{host}}/games
+
+
+### Get game by ID
+GET {{host}}/games/1
+
+### Create a new game
+POST {{host}}/games
+Content-Type: application/json
+
+{
+  "name": "Street Fight IV",
+  "genreId": 4,
+  "price": 49.99,
+  "releaseDate": "2023-10-01"
+}
+### Update a game
+PUT {{host}}/games/{{id}}
+Content-Type: application/json
+
+{
+  "name": "Updated Game",
+  "genre": "Updated Genre",
+  "price": 59.99,
+  "releaseDate": "2023-10-01"
+}
+
+### Root Endpoint
+GET {{host}}
+
